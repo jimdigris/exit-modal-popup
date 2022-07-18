@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Всплывающее окно при закрытии страницы</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+    <div class="modal_window-closing-page">
+        <div class="modal_window-body">
+            <div class="modal_window-title">Уже уходите? <br> <small>Задержитесь еще на 10 секунд.</small></div>
+            <div class="modal_window-content">
+                <ul>
+                    <li>оставьте свой Email и мы вышлем вам промокод на персональную скидку.</li>
+                    <li>оставьте свой телефон и мы перезвоним вам.</li>
+                </ul>
+
+                <form class="modal_window-form" enctype="multipart/form-data" method="post">
+                    <input type="hidden" name="titleModal" value="Из всплывающего окна перед уходом клиента">
+                    <input type="hidden" name="linkPage" value="[[++site_url]]/[[*uri]]">
+                    <input type="hidden" name="titlePage" value="[[*pagetitle]]">
+                    <input type="hidden" name="keyL" value="a">
+                    <input type="hidden" name="keyP" value="e">
+
+                    <input class="modal_window-input" type="text" name="text" placeholder="Email и/или телефон" required>
+
+                    <div class="modal_window-info"></div>
+
+                    <button type="submit" class="modal_window-send">Отправить</button>        
+
+                    <fieldset class="modal_window-policy">
+                        <input id="modal_window-chek-policy" type="checkbox" name="policy" checked="checked" required>
+                        <label class="modal_window-chek-policy" for="modal_window-chek-policy"></label>
+                        <label class="modal_window-label-policy" for="modal_window-chek-policy"> Я согласен на обработку моих персональных данных *</label>
+                    </fieldset>
+
+                    <a class="modal_window-link-policy" href="#" target="_blank">* Политика обработки персональных данных</a>
+                </form>
+            </div>
+        </div>
+    </div>
+	
+<script src="script.js?13"></script>
+</body>
+</html>

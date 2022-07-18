@@ -1,0 +1,252 @@
+body, html {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+input[type=text]::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type=text]::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input,
+textarea,
+select {
+    /*-webkit-appearance: none;*/
+}
+
+.modal_window-closing-page {
+	display: none;
+}
+
+.modal_window-closing-page.active {	
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    animation: bg 0.3s ease;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.modal_window-body {
+    font-size: 16px;
+    padding: 30px;
+    width: 80%;
+    max-width: 440px;
+    max-height: 80%;
+    transition: 0.5s;
+    background: #F4F4F4;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 20%), 0 16px 20px rgb(0 0 0 / 20%);
+    text-align: center;
+    overflow: auto;
+    animation: scale 0.5s ease;
+}
+
+.modal_window-content {
+    display: flex;    
+    flex-direction: column;
+}
+
+.modal_window-content p {
+    display: flex;
+    font-size: 18px;
+    font-family: 'SF UI Display'; 
+    padding-top: 6px;
+    margin: 0;
+}
+
+.modal_window-content ul {
+    margin: 0;
+    padding: 0px 28px;
+}
+
+.modal_window-content li {
+    font-size: 20px;
+    font-family: 'SF UI Display'; 
+    padding-top: 6px;
+    text-align: left;
+}
+
+.modal_window-content li::marker {
+    color:#DD3F45;
+}
+
+.modal_window-title {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 32px;
+    font-family: 'SF UI Display Semibold';
+    justify-content: center;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #D7D7D7;    
+}
+
+.modal_window-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal_window-input {
+    display: flex;
+    width: 100%;
+    margin: 28px 0px 14px 0px;
+    border: 1px solid #D7D7D7;
+    padding: 16px 28px;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: 'SF UI Display';
+    border-radius: 2px;   
+    text-align: center; 
+}
+
+.modal_window-input:focus {
+    outline: none;
+    border: 1px solid #dd3f45;
+}
+
+.modal_window-info {
+    display: none;
+    justify-content: center;
+    padding: 12px;
+    margin-bottom: 14px;
+    color: #000;
+    font-weight: bold;
+    font-family: 'SF UI Display';    
+}
+
+.modal_window-send {
+    display: flex;
+    padding: 14px 28px;
+    background-color: #DD3F45;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.6s;
+    border-radius: 2px;  
+    justify-content: center;  
+}
+
+.modal_window-send:hover {
+    background-color: #c34b50;
+}
+
+.modal_window-send[disabled] {
+    background-color: #958384;
+    border: 1px solid #8b797a;
+}
+
+.modal_window-policy {
+    display: flex;
+    border: none;
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+    margin: 24px 0px 6px 0px;
+}
+
+.modal_window-policy input {
+    display: none;
+}
+
+.modal_window-chek-policy {
+    display: flex;
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+    border: 1px solid #716c6b;
+    border-radius: 2px;
+    background-color: #fff;
+    margin-right: 8px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+    transition: 0.5s;    
+}
+
+.modal_window-policy input:checked+.modal_window-chek-policy {
+    background-color: #DD3F45;
+    border-color: #c3393e;
+}
+
+.modal_window-chek-policy:before {
+    content: '';
+}
+
+.modal_window-policy input:checked+.modal_window-chek-policy:before {
+    content: '\2713';
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.modal_window-label-policy {
+    display: flex;
+    color: #444141;
+    font-size: 16px;
+    cursor: pointer;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;    
+    font-family: 'SF UI Display';
+}
+
+.modal_window-link-policy {
+    text-decoration: none;
+    color: #DD3F45;
+    font-style: italic;
+}
+
+.modal_window-link-policy:hover {
+    color: #c34b50;
+}
+
+/* Анимации */
+@keyframes scale {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes move {
+    0% {
+        right: -80px;
+    }
+
+    100% {
+        right: 20px;
+    }
+}
+
+@keyframes bg {
+    0% {
+        background: rgba(51, 122, 183, 0);
+    }
+
+    100% {
+        background: rgba(0, 0, 0, 0.8);
+    }
+}
